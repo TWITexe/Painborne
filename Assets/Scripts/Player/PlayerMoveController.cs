@@ -24,24 +24,31 @@ public class PlayerMoveController : MonoBehaviour
     {
         baseScale = transform.localScale;
         rigidBody = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
         moveDirection = Input.GetAxisRaw("Horizontal");
 
-        //if (anim != null)
-        //    anim.SetFloat("speed", Mathf.Abs(movement.x));
-
         if (Input.GetKeyDown(KeyCode.Space))
+        {
             jumpPressed = true;
+            anim.SetTrigger("GetDamage");
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            anim.SetTrigger("GetDamage");
 
     }
     private void FixedUpdate()
     {
         Vector2 movement = new Vector2(moveDirection * speed, rigidBody.linearVelocity.y);
         rigidBody.linearVelocity = movement;
+
+        if (anim != null)
+            anim.SetFloat("speed", Mathf.Abs(movement.x));
 
         Flip();
         Jump();
