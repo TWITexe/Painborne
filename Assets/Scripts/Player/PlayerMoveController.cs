@@ -34,12 +34,13 @@ public class PlayerMoveController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpPressed = true;
-            anim.SetTrigger("GetDamage");
+            gameObject.GetComponent<Health>().TakeDamage(5);
         }
 
 
+
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-            anim.SetTrigger("GetDamage");
+            gameObject.GetComponent<Health>().TakeDamage(5);
 
     }
     private void FixedUpdate()
