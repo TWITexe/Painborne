@@ -18,17 +18,30 @@ public class SpikeSequence : MonoBehaviour
         // Можно задать любую последовательность через DOTween.Sequence
         Sequence seq = DOTween.Sequence();
 
-        seq.Append(spike1.Attack(false));
-        seq.AppendInterval(0.3f);
-
-        seq.Append(spike2.Attack(true));
-        seq.AppendInterval(0.3f);
-
         seq.Append(spike3.Attack(false));
+        seq.Append(spike2.Attack(false));
+        seq.AppendInterval(1f);
+        seq.Append(spike1.Attack(false));
+        seq.AppendInterval(1f);
+        seq.Append(spike1.Attack(true));
+        seq.Join(spike3.Attack(true));
         seq.AppendInterval(1f);
 
+        seq.Append(spike2.Attack(true));
+        seq.AppendInterval(1f);
+        seq.Append(spike2.Attack(true));
+        seq.Join(spike3.Attack(false));
+        seq.AppendInterval(1f);
+        seq.Append(spike1.Attack(false));
+        seq.Join(spike3.Attack(true));
+        seq.AppendInterval(1f);
+        seq.Append(spike2.Attack(false));
+        seq.Join(spike3.Attack(false));
+        seq.AppendInterval(3f);
+        seq.Append(spike1.Attack(false));
+        seq.Join(spike2.Attack(false));
         // Повторять бесконечно
-        seq.SetLoops(-1, LoopType.Restart);
+        //seq.SetLoops(-1, LoopType.Restart);
     }
 }
 
