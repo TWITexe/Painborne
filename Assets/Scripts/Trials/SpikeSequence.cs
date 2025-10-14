@@ -8,12 +8,7 @@ public class SpikeSequence : MonoBehaviour
     [SerializeField] private Spike spike2;
     [SerializeField] private Spike spike3;
 
-    private void Start()
-    {
-        PlaySequence();
-    }
-
-    private void PlaySequence()
+    public void PlaySequence()
     {
         // ћожно задать любую последовательность через DOTween.Sequence
         Sequence seq = DOTween.Sequence();
