@@ -695,6 +695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 109975717}
   - component: {fileID: 109975716}
+  - component: {fileID: 109975718}
   m_Layer: 0
   m_Name: SpikesRoom
   m_TagString: Untagged
@@ -717,6 +718,7 @@ MonoBehaviour:
   spike1: {fileID: 1902824768}
   spike2: {fileID: 701237779}
   spike3: {fileID: 245670558}
+  impulseSource: {fileID: 109975718}
 --- !u!4 &109975717
 Transform:
   m_ObjectHideFlags: 0
@@ -736,6 +738,59 @@ Transform:
   - {fileID: 245670561}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &109975718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109975715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImpulseDefinition:
+    ImpulseChannel: 1
+    ImpulseShape: 4
+    CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ImpulseDuration: 2
+    ImpulseType: 0
+    DissipationRate: 0.25
+    RawSignal: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    RepeatMode: 0
+    Randomize: 1
+    TimeEnvelope:
+      AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      AttackTime: 0
+      SustainTime: 0.2
+      DecayTime: 0.7
+      ScaleWithImpact: 1
+      HoldForever: 0
+    ImpactRadius: 100
+    DirectionMode: 0
+    DissipationMode: 2
+    DissipationDistance: 100
+    PropagationSpeed: 550
+  DefaultVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &147544474
 GameObject:
   m_ObjectHideFlags: 0
@@ -6539,6 +6594,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6631,8 +6687,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34
-  orthographic: 1
+  field of view: 36.1
+  orthographic: 0
   orthographic size: 3.6
   m_Depth: -1
   m_CullingMask:
@@ -6658,7 +6714,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 69.33586, y: -7.022003, z: -10}
+  m_LocalPosition: {x: 68.79555, y: -7.1516433, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6684,7 +6740,7 @@ MonoBehaviour:
   UpdateMethod: 2
   BlendUpdateMethod: 1
   LensModeOverride:
-    Enabled: 0
+    Enabled: 1
     DefaultMode: 2
   DefaultBlend:
     Style: 1
@@ -6709,6 +6765,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomCamera: {fileID: 1944970066}
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45bdbd19745a34a43b0759a19d956308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetAspect: 1.7777778
 --- !u!4 &528658044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8464082907330533562, guid: eb78ad5c58e1cdd4696f85948973bf03, type: 3}
@@ -8303,7 +8372,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0.35034, y: -64.99994}
-  m_SizeDelta: {x: 1089.4321, y: 68.5765}
+  m_SizeDelta: {x: 1089.4321, y: 67.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1121882029
 GameObject:
@@ -14115,7 +14184,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -65}
-  m_SizeDelta: {x: 1090.1328, y: 68.5765}
+  m_SizeDelta: {x: 1090.1328, y: 67.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1395479887
 MonoBehaviour:
@@ -19184,7 +19253,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 31.915958, y: -3.2889433}
+  m_Offset: {x: 31.583988, y: -3.2889433}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -19194,7 +19263,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 86.082756, y: 16.60302}
+  m_Size: {x: 85.418816, y: 16.60302}
   m_EdgeRadius: 0
 --- !u!4 &1562329278
 Transform:
@@ -19333,7 +19402,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 1.7067, y: -65}
-  m_SizeDelta: {x: 1092.1448, y: 68.5765}
+  m_SizeDelta: {x: 1092.1448, y: 67.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1627894099
 MonoBehaviour:
@@ -25121,7 +25190,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 34
+    FieldOfView: 21.9
     OrthographicSize: 2.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -25149,7 +25218,7 @@ Transform:
   m_GameObject: {fileID: 1944970066}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 69.4715, y: -7.0699997, z: -10}
+  m_LocalPosition: {x: 69.33449, y: -7.352626, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25550,9 +25619,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e316bb32b7099489b89fd13287289d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.9
+  speed: 2
   climbSpeed: 3
-  jumpForce: 4
+  jumpForce: 4.5
   groundCheck: {fileID: 35696896}
   groundCheckRadius: 0.2
   groundLayer:
@@ -25695,7 +25764,7 @@ Transform:
   m_GameObject: {fileID: 2010325550}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 69.44, y: -8.32, z: 0}
+  m_LocalPosition: {x: 69.3, y: -8.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26073,12 +26142,12 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 34
+    FieldOfView: 36.1
     OrthographicSize: 3.6
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
-    ModeOverride: 0
+    ModeOverride: 2
     PhysicalProperties:
       GateFit: 2
       SensorSize: {x: 21.946, y: 16.002}
@@ -26101,7 +26170,7 @@ Transform:
   m_GameObject: {fileID: 2090018319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.27311, y: -7.0220027, z: -10}
+  m_LocalPosition: {x: 71.10096, y: -7.15164, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

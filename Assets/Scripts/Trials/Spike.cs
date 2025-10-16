@@ -1,6 +1,8 @@
 using UnityEngine;
 using DG.Tweening;
 using Unity.Cinemachine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class Spike : MonoBehaviour
 {
@@ -13,7 +15,6 @@ public class Spike : MonoBehaviour
     [SerializeField] private float longShake = 0.8f;
 
     private Tween currentTween;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerMoveController player))
@@ -22,32 +23,33 @@ public class Spike : MonoBehaviour
 
     public Tween Attack(bool longDelay)
     {
-        // Прерываем прошлое движение, если есть
         currentTween?.Kill();
-
         Sequence seq = DOTween.Sequence();
+        
+        seq.Append(transform.DOMove(bottomPoint.position, moveDuration)
+            .SetEase(Ease.InQuad)
+            .OnComplete(() =>
+            {
+                float strength = longDelay ? longShake : shortShake;
+                Vector3 randomDir = new Vector3(
+                    Random.Range(-1f, 1f),
+                    Random.Range(-1f, 1f),
+                    0f
+                ).normalized;
 
-        // Опускаем вниз
-        seq.Append(transform.DOMove(bottomPoint.position, moveDuration).SetEase(Ease.InQuad).OnComplete(() =>
-        {
-            float strenght = longDelay ? longShake : shortShake;
+                if (impulseSource != null)
+                    impulseSource.GenerateImpulse(randomDir * strength);
+            })
+        );
 
-            Vector3 randomDir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
-
-            if (impulseSource != null)
-                impulseSource.GenerateImpulse(randomDir * strenght);
-
-        }));
-
-
-        // Ждём 1 или 4 секунды
         seq.AppendInterval(longDelay ? 2f : 1f);
 
-        // Поднимаем обратно
-        seq.Append(transform.DOMove(topPoint.position, moveDuration).SetEase(Ease.OutQuad));
+        seq.Append(transform.DOMove(topPoint.position, moveDuration)
+            .SetEase(Ease.OutQuad)
+        );
 
         return seq;
     }
 
-    
+
 }

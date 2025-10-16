@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SpikeAreaTrigger : MonoBehaviour, IInteractable
@@ -9,8 +10,11 @@ public class SpikeAreaTrigger : MonoBehaviour, IInteractable
     {
         if (isActive) return;
         isActive = true;
-
+        StartCoroutine(DelayedStart());
+    }
+    private IEnumerator DelayedStart()
+    {
+        yield return null; 
         spikeSequence.PlaySequence();
     }
-
 }
