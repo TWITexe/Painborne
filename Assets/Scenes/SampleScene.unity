@@ -6733,7 +6733,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.64096, y: -7.23164, z: -10}
+  m_LocalPosition: {x: -2.299038, y: 0.058359146, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8041,7 +8041,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0145612955, y: -1.1710509}
+  m_Offset: {x: -0.0145612955, y: -1.1330078}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8051,7 +8051,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.788277, y: 1.4799426}
+  m_Size: {x: 3.788277, y: 1.5560288}
   m_EdgeRadius: 0
 --- !u!114 &928686063
 MonoBehaviour:
@@ -20001,7 +20001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2830623095419059830, guid: 4162f92211121fb45abd89020bfed836, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 7.75
+      value: 3.41
       objectReference: {fileID: 0}
     - target: {fileID: 4431150780554606914, guid: 4162f92211121fb45abd89020bfed836, type: 3}
       propertyPath: m_Name
@@ -20659,7 +20659,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 2.1
+  m_PointLightOuterRadius: 3.41
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -26217,7 +26217,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a766cfc25f9e02d4a8929a35c5ef74fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26239,7 +26239,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 8590531366939937833, guid: 4ade16ff7d112194abd0dc5d54199326, type: 3}
-  m_Color: {r: 0.3660378, g: 0.2531957, b: 0.15953721, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -26258,7 +26258,7 @@ Transform:
   m_GameObject: {fileID: 2010325550}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.84, y: -8.4, z: 0}
+  m_LocalPosition: {x: -4.1, y: -1.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26314,6 +26314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cabf47859502e40acd3f622ef3c051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 2010325554}
+  flashColor: {r: 1, g: 0.2, b: 0.2, a: 1}
+  flashDuration: 0.3
+  flashCount: 2
 --- !u!114 &2010325559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26550,7 +26554,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 7.65
+  m_PointLightOuterRadius: 3.41
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -26664,7 +26668,7 @@ Transform:
   m_GameObject: {fileID: 2090018319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.64096, y: -7.23164, z: -10}
+  m_LocalPosition: {x: -2.2990375, y: 0.058359146, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
