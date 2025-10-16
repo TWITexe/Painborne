@@ -8,10 +8,12 @@ public class SpikeSequence : MonoBehaviour
     [SerializeField] private Spike spike2;
     [SerializeField] private Spike spike3;
     [SerializeField] private CinemachineImpulseSource impulseSource;
+    [SerializeField] private Door door;
+    [SerializeField] private GameObject lockWall;
 
     public void PlaySequence()
     {
-        // ћожно задать любую последовательность через DOTween.Sequence
+        LockTheSpikeRoom();
         StartImpulse();
         Sequence seq = DOTween.Sequence();
 
@@ -38,17 +40,32 @@ public class SpikeSequence : MonoBehaviour
         seq.AppendInterval(3f);
         seq.Append(spike1.Attack(false));
         seq.Join(spike2.Attack(false));
+
+        seq.OnComplete(() =>
+        {
+            if (door != null)
+            {
+                StartImpulse();
+                door.Unlock();
+                door.Interact();
+            }
+        });
     }
     void StartImpulse()
     {
         float strength = 0.4f;
         Vector3 randomDir = new Vector3(
-            Random.Range(-2f,2f),
+            Random.Range(-2f, 2f),
             Random.Range(-2f, 2f),
             0f
         ).normalized;
 
-            impulseSource.GenerateImpulse(randomDir * strength);
+        impulseSource.GenerateImpulse(randomDir * strength);
+    }
+    void LockTheSpikeRoom()
+    {
+        lockWall.gameObject.transform.DOMoveY(transform.position.y - 7, 1)
+               .SetEase(Ease.OutQuad);
     }
 }
 
