@@ -12,11 +12,12 @@ public class CameraSwitch : MonoBehaviour
             isZooming = !isZooming;
         }
     }
-    private void Zoom()
+    public void Zoom()
     {
         if (isZooming)
             zoomCamera.SetActive(false);
         else
             zoomCamera.SetActive(true);
     }
+
 }
