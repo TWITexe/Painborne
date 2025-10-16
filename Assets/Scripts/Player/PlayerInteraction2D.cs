@@ -20,7 +20,14 @@ public class PlayerInteraction2D : MonoBehaviour
             currentInteractable = interactable;
         }
     }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.TryGetComponent(out IInteractable interactable))
+        {
+            currentInteractable = interactable;
 
+        }
+    }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.TryGetComponent(out IInteractable _))
