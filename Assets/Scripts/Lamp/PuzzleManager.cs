@@ -9,10 +9,10 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField]
     private int[][] leverLampIndices =
     {
-        new int[] {0, 1, 2, 3, 6},   
-        new int[] {2, 4, 5, 7, 8},      
-        new int[] {1, 3, 4, 6},               
-        new int[] {4, 6, 7}
+        new int[] {1, 4, 6, 7},   
+        new int[] {3, 4, 6, 9},      
+        new int[] {1, 3, 5, 7, 9},               
+        new int[] {2, 4, 5, 6, 8}
     };
 
     public void ActivateLever(int leverIndex)
