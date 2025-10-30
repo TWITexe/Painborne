@@ -1,8 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using Unity.Cinemachine;
-using System.Collections.Generic;
-using System.Collections;
+
 
 public class Spike : MonoBehaviour
 {

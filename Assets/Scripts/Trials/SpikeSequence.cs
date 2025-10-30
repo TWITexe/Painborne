@@ -7,6 +7,7 @@ public class SpikeSequence : MonoBehaviour
     [SerializeField] private Spike spike1;
     [SerializeField] private Spike spike2;
     [SerializeField] private Spike spike3;
+
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] private Door door;
     [SerializeField] private GameObject lockWall;
@@ -45,11 +46,15 @@ public class SpikeSequence : MonoBehaviour
         {
             if (door != null)
             {
-                StartImpulse();
                 door.Unlock();
                 door.Interact();
             }
         });
+    }
+    void LockTheSpikeRoom()
+    {
+        lockWall.gameObject.transform.DOMoveY(transform.position.y - 7, 1)
+               .SetEase(Ease.OutQuad);
     }
     void StartImpulse()
     {
@@ -61,11 +66,6 @@ public class SpikeSequence : MonoBehaviour
         ).normalized;
 
         impulseSource.GenerateImpulse(randomDir * strength);
-    }
-    void LockTheSpikeRoom()
-    {
-        lockWall.gameObject.transform.DOMoveY(transform.position.y - 7, 1)
-               .SetEase(Ease.OutQuad);
     }
 }
 
