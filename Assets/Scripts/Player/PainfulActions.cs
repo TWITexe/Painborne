@@ -26,7 +26,11 @@ public class PainfulActions : MonoBehaviour
             playerHealth.TakeDamage(5);
 
     }
-    
+
+    public void MobilePainful()
+    {
+        playerHealth.TakeDamage(5);
+    }
 
     private void OnEnable()
     {

@@ -35,5 +35,14 @@ public class PlayerInteraction2D : MonoBehaviour
             currentInteractable = null;
         }
     }
+
+    public void MobileInterection()
+    {
+        if (currentInteractable != null)
+        {
+            currentInteractable.Interact();
+        }
+
+    }
 }
 
