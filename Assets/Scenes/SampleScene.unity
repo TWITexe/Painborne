@@ -5151,6 +5151,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2010325558}
+          m_TargetAssemblyTypeName: PainfulActions, Assembly-CSharp
+          m_MethodName: MobilePainful
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -5210,19 +5222,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 52702765}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2010325558}
-        m_TargetAssemblyTypeName: PainfulActions, Assembly-CSharp
-        m_MethodName: MobilePainful
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &52702765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21825,6 +21825,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2010325558}
+          m_TargetAssemblyTypeName: PainfulActions, Assembly-CSharp
+          m_MethodName: MobilePainful
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -21884,19 +21896,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 345230224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2010325558}
-        m_TargetAssemblyTypeName: PainfulActions, Assembly-CSharp
-        m_MethodName: MobilePainful
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &345230224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27698,7 +27698,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0325805, y: 0.4001122, z: -10}
+  m_LocalPosition: {x: -0.7656357, y: 0.3983593, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28435,6 +28435,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2010325558}
+          m_TargetAssemblyTypeName: PainfulActions, Assembly-CSharp
+          m_MethodName: MobilePainful
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -28494,19 +28506,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 588161548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2010325558}
-        m_TargetAssemblyTypeName: PainfulActions, Assembly-CSharp
-        m_MethodName: MobilePainful
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &588161548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34181,6 +34181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 722769120}
   - component: {fileID: 722769121}
+  - component: {fileID: 722769122}
   m_Layer: 3
   m_Name: Room 1+2+3
   m_TagString: Untagged
@@ -34237,7 +34238,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 10.771536, y: -2.9941878}
+  m_Offset: {x: 10.712778, y: -2.9941878}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -34247,7 +34248,53 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 34.76398, y: 1.3883762}
+  m_Size: {x: 34.881496, y: 1.3883762}
+  m_EdgeRadius: 0
+--- !u!61 &722769122
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722769119}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -7.2664356, y: 0.11751628}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.8041382, y: 7.5809226}
   m_EdgeRadius: 0
 --- !u!1 &738346872
 GameObject:
@@ -50944,8 +50991,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -32.49997}
-  m_SizeDelta: {x: 1097.4, y: 67.94}
+  m_AnchoredPosition: {x: 0, y: -33.531}
+  m_SizeDelta: {x: 1097.4, y: 65.878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1121882029
 GameObject:
@@ -66896,8 +66943,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -32.5}
-  m_SizeDelta: {x: 1097.1, y: 67.94}
+  m_AnchoredPosition: {x: 0, y: -33.531}
+  m_SizeDelta: {x: 1097.1, y: 65.878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1395479887
 MonoBehaviour:
@@ -72480,10 +72527,10 @@ CompositeCollider2D:
         Y: 37550744
       - X: 785606528
         Y: 37774832
-      - X: -76147352
-        Y: 38535268
-      - X: -75593120
-        Y: -108864624
+      - X: -110848920
+        Y: 39166200
+      - X: -110925624
+        Y: -110126496
       - X: 693776064
         Y: -112722520
       - X: 692655552
@@ -72499,8 +72546,8 @@ CompositeCollider2D:
       - {x: 85.40162, y: -11.3077345}
       - {x: 85.43989, y: 3.7550745}
       - {x: 78.56065, y: 3.7774832}
-      - {x: -7.614735, y: 3.8534973}
-      - {x: -7.5592833, y: -10.886462}
+      - {x: -11.084892, y: 3.916591}
+      - {x: -11.092533, y: -11.01265}
       - {x: 69.37761, y: -11.272282}
       - {x: 69.26559, y: -22.35482}
   m_VertexDistance: 0.0005
@@ -72586,8 +72633,8 @@ PolygonCollider2D:
       - {x: 85.40162, y: -11.307763}
       - {x: 85.43992, y: 3.7550745}
       - {x: 78.56065, y: 3.7774832}
-      - {x: -7.614735, y: 3.8535268}
-      - {x: -7.5593123, y: -10.886462}
+      - {x: -11.084892, y: 3.91662}
+      - {x: -11.092563, y: -11.01265}
       - {x: 69.37761, y: -11.272252}
       - {x: 69.26556, y: -22.35482}
   m_UseDelaunayMesh: 0
@@ -72739,8 +72786,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 840.9, y: -1416.5001}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: 838.08, y: -1424}
+  m_SizeDelta: {x: 159.83, y: 159.453}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1612190276
 MonoBehaviour:
@@ -72754,7 +72801,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2010325558}
+          m_TargetAssemblyTypeName: PainfulActions, Assembly-CSharp
+          m_MethodName: MobilePainful
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1612190277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72799,18 +72862,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2010325558}
-        m_TargetAssemblyTypeName: PainfulActions, Assembly-CSharp
-        m_MethodName: MobilePainful
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2010325559}
         m_TargetAssemblyTypeName: PlayerInteraction2D, Assembly-CSharp
         m_MethodName: MobileInterection
@@ -85148,6 +85199,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2010325558}
+          m_TargetAssemblyTypeName: PainfulActions, Assembly-CSharp
+          m_MethodName: MobilePainful
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1978681151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85191,19 +85254,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1978681152}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2010325558}
-        m_TargetAssemblyTypeName: PainfulActions, Assembly-CSharp
-        m_MethodName: MobilePainful
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1978681152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90813,7 +90864,7 @@ MonoBehaviour:
   CameraDistance: 10
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: -0.13, y: 0.18999955}
+    ScreenPosition: {x: -0.28, y: 0.18999955}
     DeadZone:
       Enabled: 1
       Size: {x: 0.26, y: 0.004282655}
@@ -90881,7 +90932,7 @@ Transform:
   m_GameObject: {fileID: 2090018319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5036879, y: 0.3983593, z: -10}
+  m_LocalPosition: {x: -0.7656357, y: 0.3983593, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -95823,14 +95874,14 @@ RectTransform:
   m_GameObject: {fileID: 2128554594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2751079, y: 1.2751079, z: 1.2751079}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2146016869}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -102, y: -75}
+  m_AnchoredPosition: {x: -88, y: -80.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2128554596
