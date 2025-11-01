@@ -10,7 +10,6 @@ public class PainfulActions : MonoBehaviour
     [SerializeField] private int flashCount = 2;
     private Color originalColor;
 
-    private Material originalMaterial;
     void Awake()
     {
         playerHealth = gameObject.GetComponent<Health>();
