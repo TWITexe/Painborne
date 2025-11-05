@@ -39,10 +39,14 @@ public class Health : MonoBehaviour
     }
     public void Heal(int amount)
     {
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-        Debug.Log($"{gameObject.name} Вылечился! У него стало: {currentHealth} здоровья");
-        animator?.SetTrigger("Prays");
-        OnHealed?.Invoke(currentHealth); // 🔔 событие лечения
+        if (currentHealth > 0)
+        {
+            currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+            Debug.Log($"{gameObject.name} Вылечился! У него стало: {currentHealth} здоровья");
+            animator?.SetTrigger("Prays");
+            OnHealed?.Invoke(currentHealth); // 🔔 событие лечения
+        }
+        
     }
 
     private void Die()
