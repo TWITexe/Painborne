@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        //Debug.Log($"{gameObject.name} Получил урон! У него осталось: {currentHealth} здоровья");
+        
 
         animator?.SetTrigger("GetDamage");
 
@@ -41,7 +41,7 @@ public class Health : MonoBehaviour
     {
         if (currentHealth > 0)
         {
-            currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+            currentHealth = Mathf.Min(currenstHealth + amount, maxHealth);
             Debug.Log($"{gameObject.name} Вылечился! У него стало: {currentHealth} здоровья");
             animator?.SetTrigger("Prays");
             OnHealed?.Invoke(currentHealth); // 🔔 событие лечения
