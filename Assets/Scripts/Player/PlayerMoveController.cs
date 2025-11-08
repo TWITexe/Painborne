@@ -29,11 +29,11 @@ public class PlayerMoveController : MonoBehaviour
     private float baseGravity;
     private Vector3 baseScale;
 
-    // — ПК ввод
+    // ПК ввод
     private float kbHorizontal;
     private float kbVertical;
 
-    // — Мобильный ввод (удержания кнопок)
+    // Мобильный ввод
     private bool mLeftHeld, mRightHeld, mUpHeld, mDownHeld;
     private bool mJumpPressedFrame; // однокадровый триггер
 
@@ -52,7 +52,6 @@ public class PlayerMoveController : MonoBehaviour
 
     private void Update()
     {
-        // Считываем ПК ввод только если мобильный режим выключен
         if (!mobileMode)
         {
             kbHorizontal = Input.GetAxisRaw("Horizontal");
@@ -63,7 +62,7 @@ public class PlayerMoveController : MonoBehaviour
         }
         else
         {
-            // в мобильном режиме собираем оси из удержаний
+            // в мобильном собираем оси из удержаний
             int h = 0;
             if (mLeftHeld) h -= 1;
             if (mRightHeld) h += 1;
@@ -72,13 +71,13 @@ public class PlayerMoveController : MonoBehaviour
             if (mDownHeld) v -= 1;
             if (mUpHeld) v += 1;
 
-            kbHorizontal = h; // переиспользуем те же переменные
+            kbHorizontal = h; 
             kbVertical = v;
 
             if (mJumpPressedFrame)
             {
                 jumpPressed = true;
-                mJumpPressedFrame = false; // сбрасываем однокадровый триггер
+                mJumpPressedFrame = false;
             }
         }
     }
