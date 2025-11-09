@@ -23,6 +23,8 @@ public class PlayerMoveController : MonoBehaviour
     private bool isGrounded;
     private bool jumpPressed;
     private bool isClimbing;
+    private bool moveLocks = false;
+    public bool MoveLocks => moveLocks;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -84,14 +86,19 @@ public class PlayerMoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isClimbing)
+        Debug.Log(moveLocks);
+        if (moveLocks == false)
         {
-            HandleClimbing(kbHorizontal, kbVertical);
-        }
-        else
-        {
-            HandleMovement(kbHorizontal);
-            Jump();
+
+            if (isClimbing)
+            {
+                HandleClimbing(kbHorizontal, kbVertical);
+            }
+            else
+            {
+                HandleMovement(kbHorizontal);
+                Jump();
+            }
         }
 
         Flip(kbHorizontal);
@@ -140,6 +147,10 @@ public class PlayerMoveController : MonoBehaviour
 
         jumpPressed = false;
     }
+
+    public void LockMove() => moveLocks = true;
+    public void UnlockMove() => moveLocks = false;
+    
 
     // =========================
     //       онд  лнахкйх
