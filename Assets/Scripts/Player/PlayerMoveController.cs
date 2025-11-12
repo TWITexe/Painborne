@@ -20,12 +20,15 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private bool autoEnableOnMobilePlatform = true;
     [SerializeField] private bool mobileMode = false;
 
+
+
     private bool isGrounded;
     private bool jumpPressed;
     private bool isClimbing;
     private bool moveLocks = false;
     public bool MoveLocks => moveLocks;
 
+    private Health playerHealth;
     private Rigidbody2D rb;
     private Animator anim;
     private float baseGravity;
@@ -43,6 +46,7 @@ public class PlayerMoveController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        playerHealth = GetComponent<Health>();
         baseScale = transform.localScale;
         baseGravity = rb.gravityScale;
 
@@ -51,7 +55,13 @@ public class PlayerMoveController : MonoBehaviour
         else
             ApplyMobileUIVisibility();
     }
-
+    private void Start()
+    {
+        if (playerHealth != null)
+        {
+            playerHealth.OnDeath += () => LockMove();
+        }
+    }
     private void Update()
     {
         if (!mobileMode)
