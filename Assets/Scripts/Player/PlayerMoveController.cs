@@ -134,7 +134,7 @@ public class PlayerMoveController : MonoBehaviour
 
     private void Flip(float horizontalInput)
     {
-        if (horizontalInput != 0)
+        if (horizontalInput != 0 && moveLocks == false)
             transform.localScale = new Vector3(Mathf.Sign(horizontalInput) * baseScale.x, baseScale.y, baseScale.z);
     }
 

@@ -9,9 +9,10 @@ public class Health : MonoBehaviour
     [SerializeField] private int currentHealth;
     [SerializeField] private float destroyDelay = 1.5f;
 
-    public event Action<int> OnDamaged; // вызывается при уроне, передаём текущее HP
-    public event Action OnDeath;        // вызывается при смерти
-    public event Action<int> OnHealed;  // вызывается при лечении, передаём текущее HP
+    private bool isDead = false;
+    public event Action<int> OnDamaged; 
+    public event Action OnDeath;        
+    public event Action<int> OnHealed;
     public int CurrentHealth => currentHealth;
     public int MaxHealth => maxHealth;
 
@@ -34,6 +35,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            isDead = true;
             Die();
         }
     }
@@ -56,6 +58,6 @@ public class Health : MonoBehaviour
         animator?.SetTrigger("Die");
 
         OnDeath?.Invoke(); // 🔔 событие смерти
-        Destroy(gameObject, destroyDelay);
+        //Destroy(gameObject, destroyDelay);
     }
 }
