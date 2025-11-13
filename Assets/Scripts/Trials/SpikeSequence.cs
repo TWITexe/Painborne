@@ -11,6 +11,8 @@ public class SpikeSequence : MonoBehaviour
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] private Door door;
     [SerializeField] private GameObject lockWall;
+    [SerializeField] private GameObject mainCamera;
+    [SerializeField] private GameObject spikesCamera;
 
     public void PlaySequence()
     {
@@ -49,12 +51,16 @@ public class SpikeSequence : MonoBehaviour
                 door.Unlock();
                 door.Interact();
             }
+            spikesCamera.SetActive(false);
+            mainCamera.SetActive(true);
         });
     }
     void LockTheSpikeRoom()
     {
         lockWall.gameObject.transform.DOMoveY(transform.position.y - 7, 1)
                .SetEase(Ease.OutQuad);
+        spikesCamera.SetActive(true);
+        mainCamera.SetActive(false);
     }
     void StartImpulse()
     {
