@@ -5,10 +5,17 @@ public class UIHealthBar : MonoBehaviour
 {
     [SerializeField] private Health healthPlayer;
     [SerializeField] private Image hp;
+    [SerializeField] private GameObject hpUI;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            HideHealthBar();
+        }
+    }
     private void OnEnable()
     {
-        // подписываемся на события
         healthPlayer.OnDamaged += UpdateHealthBar;
         healthPlayer.OnHealed += UpdateHealthBar;
         healthPlayer.OnDeath += HideHealthBar;
@@ -16,7 +23,6 @@ public class UIHealthBar : MonoBehaviour
 
     private void OnDisable()
     {
-        // отписываемся (важно для избежания утечек!)
         healthPlayer.OnDamaged -= UpdateHealthBar;
         healthPlayer.OnHealed -= UpdateHealthBar;
         healthPlayer.OnDeath -= HideHealthBar;
@@ -30,6 +36,6 @@ public class UIHealthBar : MonoBehaviour
 
     private void HideHealthBar()
     {
-        //hp.SetActive(false);
+        hpUI.SetActive(false);
     }
 }

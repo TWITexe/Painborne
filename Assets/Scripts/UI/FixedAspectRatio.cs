@@ -2,7 +2,7 @@
 
 public class FixedAspectRatio : MonoBehaviour
 {
-    [Tooltip("Целевое соотношение сторон (например, 16:9 = 1.7777)")]
+    [Tooltip("Целевое соотношение сторон (16:9 = 1.7777)")]
     public float targetAspect = 16f / 9f;
 
     private Camera cam;
@@ -30,13 +30,13 @@ public class FixedAspectRatio : MonoBehaviour
 
         if (scaleHeight < 1.0f)
         {
-            // узкий экран (например 4:3) - черные полосы сверху и снизу
+            // узкий экран (например 4:3) черные полосы сверху и снизу
             Rect rect = new Rect(0, (1.0f - scaleHeight) / 2.0f, 1.0f, scaleHeight);
             cam.rect = rect;
         }
         else
         {
-            // широкий экран (например 21:9) - черные полосы по бокам
+            // широкий экран (например 21:9) черные полосы по бокам
             float scaleWidth = 1.0f / scaleHeight;
             Rect rect = new Rect((1.0f - scaleWidth) / 2.0f, 0, scaleWidth, 1.0f);
             cam.rect = rect;
