@@ -58,6 +58,5 @@ public class Health : MonoBehaviour
         animator?.SetTrigger("Die");
 
         OnDeath?.Invoke(); // 🔔 событие смерти
-        //Destroy(gameObject, destroyDelay);
     }
 }
