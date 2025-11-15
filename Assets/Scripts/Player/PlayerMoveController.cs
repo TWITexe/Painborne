@@ -74,7 +74,7 @@ public class PlayerMoveController : MonoBehaviour
         }
         else
         {
-            // в мобильном собираем оси из удержаний
+            // в мобильном оси из удержаний
             int h = 0;
             if (mLeftHeld) h -= 1;
             if (mRightHeld) h += 1;
@@ -128,7 +128,7 @@ public class PlayerMoveController : MonoBehaviour
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(horizontalInput * speed, verticalInput * climbSpeed);
 
-        // анимации
+        // анимация для лестницы ( доделаю позже )
         // if (anim != null) anim.SetFloat("climbSpeed", Mathf.Abs(verticalInput));
     }
 
