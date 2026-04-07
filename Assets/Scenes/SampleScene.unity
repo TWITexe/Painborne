@@ -10760,6 +10760,10 @@ MonoBehaviour:
   lockWall: {fileID: 1543216712}
   mainCamera: {fileID: 2090018319}
   spikesCamera: {fileID: 1322404375}
+  warningDuration: 1.5
+  warningStrength: 0.08
+  warningVibrato: 20
+  warningRandomness: 90
 --- !u!4 &109975717
 Transform:
   m_ObjectHideFlags: 0
@@ -22051,7 +22055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1266066825542533037, guid: 327483b883cd05a499fe5d80b8267dfb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8349949
+      value: 16.63
       objectReference: {fileID: 0}
     - target: {fileID: 1266066825542533037, guid: 327483b883cd05a499fe5d80b8267dfb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22389,7 +22393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1266066825542533037, guid: 327483b883cd05a499fe5d80b8267dfb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.711994
+      value: 2.007
       objectReference: {fileID: 0}
     - target: {fileID: 1266066825542533037, guid: 327483b883cd05a499fe5d80b8267dfb, type: 3}
       propertyPath: m_LocalPosition.y
