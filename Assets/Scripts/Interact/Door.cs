@@ -9,11 +9,17 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] private bool onLock = false; // требуется ли ключ для открытия
     [SerializeField] private bool cameraShake = false;
     private bool isOpen = false; // уже открыт
+    private AudioSource audioSource;
+    [SerializeField] AudioClip openSfx;
     public bool IsOpen => isOpen;
 
     [Header("If camera shake = true")]
     [SerializeField] private CinemachineImpulseSource impulseSource;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void Interact()
     {
         if (isOpen || onLock) return;
@@ -22,8 +28,10 @@ public class Door : MonoBehaviour, IInteractable
         if (cameraShake)
             StartImpulse();
 
+        audioSource.PlayOneShot(openSfx);
         transform.DOMoveY(transform.position.y + openDistance, duration)
                  .SetEase(Ease.OutQuad);
+
     }
     public void Unlock()
     {
@@ -33,6 +41,7 @@ public class Door : MonoBehaviour, IInteractable
 
     void StartImpulse()
     {
+        
         float strength = 0.4f;
         Vector3 randomDir = new Vector3(
             Random.Range(-2f, 2f),
