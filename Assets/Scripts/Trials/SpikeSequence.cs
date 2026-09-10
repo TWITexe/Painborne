@@ -20,8 +20,20 @@ public class SpikeSequence : MonoBehaviour
     [SerializeField] private int warningVibrato = 20;
     [SerializeField] private float warningRandomness = 90f;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip spikeWarningSFX;
+    [SerializeField] private AudioClip spikeAttackSFX;
+
+    [Header("Music")]
+    [SerializeField] private AudioClip startSequenceMusic;
+
+
     public void PlaySequence()
     {
+        MusicManager.Instance.StopMusic();
+        MusicManager.Instance.PlayMusic(startSequenceMusic);
+
         LockTheSpikeRoom();
         StartImpulse();
 
@@ -67,6 +79,8 @@ public class SpikeSequence : MonoBehaviour
 
             spikesCamera.SetActive(false);
             mainCamera.SetActive(true);
+            if (audioSource != null && startSequenceMusic != null)
+                MusicManager.Instance.StopMusic();
         });
     }
 
@@ -75,7 +89,7 @@ public class SpikeSequence : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         seq.Append(PlayWarningShake(spike));
-        seq.Append(spike.Attack(pause));
+        seq.Append(spike.Attack(pause, PlaySpikeAttackSound));
 
         return seq;
     }
@@ -96,12 +110,22 @@ public class SpikeSequence : MonoBehaviour
                 snapping: false,
                 fadeOut: true)
             .SetEase(Ease.Linear)
+            .OnStart(() =>
+            {
+                if (audioSource != null && spikeWarningSFX != null)
+                    audioSource.PlayOneShot(spikeWarningSFX);
+            })
             .OnComplete(() =>
             {
                 spikeTransform.localPosition = startLocalPos;
             });
     }
 
+    private void PlaySpikeAttackSound()
+    {
+        if (audioSource != null && spikeAttackSFX != null)
+            audioSource.PlayOneShot(spikeAttackSFX);
+    }
     private void LockTheSpikeRoom()
     {
         lockWall.transform.DOMoveY(transform.position.y - 7f, 1f)

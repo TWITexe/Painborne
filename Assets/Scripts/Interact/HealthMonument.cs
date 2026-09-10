@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class HealthMonument : MonoBehaviour, IInteractable
 {
@@ -7,10 +8,19 @@ public class HealthMonument : MonoBehaviour, IInteractable
     [SerializeField] private bool disableColliderAfterUse;
     [SerializeField] private Transform spawnPoint;
 
+    [SerializeField] AudioClip healthSFX;
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void Interact()
     {
         playerForInteraction.Heal(100);
-
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(healthSFX);
+        
         SaveSystem.Instance.SavePoint(spawnPoint.position);
 
         if (disableColliderAfterUse)

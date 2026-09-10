@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Audio;
 
 public class PainfulActions : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class PainfulActions : MonoBehaviour
     [SerializeField] private int flashCount = 2;
     private Color originalColor;
 
+    [SerializeField] bool haveHeartBeatSFX = false;
+    [SerializeField] AudioClip heartBeatSFX;
+    private AudioSource audioSource;
+
     void Awake()
     {
         playerHealth = gameObject.GetComponent<Health>();
@@ -17,19 +22,29 @@ public class PainfulActions : MonoBehaviour
             spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.material.color;
 
+        if (haveHeartBeatSFX)
+            audioSource = GetComponent<AudioSource>();
+
     }
 
     void Update()
     {
         if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.Space)) 
             && GetComponent<PlayerMoveController>().MoveLocks == false)
+        {
             playerHealth.TakeDamage(5);
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(heartBeatSFX);
+        }
+            
 
     }
 
     public void MobilePainful()
     {
         playerHealth.TakeDamage(5);
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(heartBeatSFX);
     }
 
     private void OnEnable()

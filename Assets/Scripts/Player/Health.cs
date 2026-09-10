@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int currentHealth;
     [SerializeField] private float destroyDelay = 1.5f;
 
+    
     private bool isDead = false;
     public event Action<int> OnDamaged; 
     public event Action OnDeath;        

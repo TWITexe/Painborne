@@ -43,6 +43,8 @@ public class SaveSystem : MonoBehaviour
             PlayerPrefs.GetFloat(SaveY)
         );
     }
+
+    [ContextMenu("Delete Save")]
     public void DeleteSave()
     {
         PlayerPrefs.DeleteKey(SaveX);

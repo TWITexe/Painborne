@@ -13,6 +13,8 @@ public class Spike : MonoBehaviour
     [SerializeField] private float shortShake = 0.3f;
     [SerializeField] private float longShake = 0.8f;
 
+    [SerializeField] private ParticleSystem groundDust;
+
     private Tween currentTween;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,16 +22,18 @@ public class Spike : MonoBehaviour
                 player.GetComponent<Health>().TakeDamage(30);
     }
 
-    public Tween Attack(bool longDelay)
+    public Tween Attack(bool longDelay, System.Action onImpact)
     {
         currentTween?.Kill();
+
         Sequence seq = DOTween.Sequence();
-        
+
         seq.Append(transform.DOMove(bottomPoint.position, moveDuration)
             .SetEase(Ease.InQuad)
             .OnComplete(() =>
             {
                 float strength = longDelay ? longShake : shortShake;
+
                 Vector3 randomDir = new Vector3(
                     Random.Range(-1f, 1f),
                     Random.Range(-1f, 1f),
@@ -38,6 +42,9 @@ public class Spike : MonoBehaviour
 
                 if (impulseSource != null)
                     impulseSource.GenerateImpulse(randomDir * strength);
+
+                HitGround();
+                onImpact?.Invoke();
             })
         );
 
@@ -50,5 +57,9 @@ public class Spike : MonoBehaviour
         return seq;
     }
 
+    private void HitGround()
+    {
+        groundDust.Play();
+    }
 
 }

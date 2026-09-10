@@ -4,7 +4,7 @@ using UnityEngine;
 public class PuzzleManager : MonoBehaviour
 {
     [SerializeField] private LampController[] lamps;
-
+    [SerializeField] private Door door;
 
     [SerializeField]
     private int[][] leverLampIndices =
@@ -33,6 +33,11 @@ public class PuzzleManager : MonoBehaviour
                 return;
         }
 
-        Debug.Log("✅ Все лампочки включены! Победа!");
+        Debug.Log("✅ Все лампочки включены!");
+        if (door != null)
+        {
+            door.Unlock();
+            door.Interact();
+        }
     }
 }
