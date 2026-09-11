@@ -48,7 +48,8 @@ public class MusicManager : MonoBehaviour
 
         musicSource
             .DOFade(maxVolume, fadeInDuration)
-            .SetEase(Ease.InOutSine);
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true);
     }
 
     public void StopMusic()
@@ -61,6 +62,7 @@ public class MusicManager : MonoBehaviour
         musicSource
             .DOFade(0f, fadeOutDuration)
             .SetEase(Ease.InOutSine)
+            .SetUpdate(true)
             .OnComplete(() =>
             {
                 musicSource.Stop();
