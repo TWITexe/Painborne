@@ -57,7 +57,7 @@ public class MusicManager : MonoBehaviour
         if (!musicSource.isPlaying)
             return;
 
-        musicSource.DOKill();
+        //musicSource.DOKill();
 
         musicSource
             .DOFade(0f, fadeOutDuration)
