@@ -5943,7 +5943,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -32772,7 +32772,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -32887,7 +32887,7 @@ MonoBehaviour:
   defaultMusic: {fileID: 8300000, guid: 4ebedf23748ec2744a4aab1cdee272e5, type: 3}
   fadeInDuration: 4
   fadeOutDuration: 4
-  maxVolume: 0.2
+  maxVolume: 0.1
 --- !u!1 &358027756
 GameObject:
   m_ObjectHideFlags: 0
@@ -33238,7 +33238,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -39045,7 +39045,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12014985, y: -0.18546283, z: -13}
+  m_LocalPosition: {x: -0.6204066, y: -0.18469107, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -57612,7 +57612,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.13
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -85038,7 +85038,7 @@ GameObject:
   m_Layer: 0
   m_Name: StopMusicTrigger
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -85106,7 +85106,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.32177734, y: -0.014626503}
+  m_Offset: {x: 0.01493454, y: 0.08765364}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -85116,7 +85116,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.2286072, y: 0.970747}
+  m_Size: {x: 2.8422928, y: 1.9480906}
   m_EdgeRadius: 0
 --- !u!1 &1340860465
 GameObject:
@@ -95137,7 +95137,7 @@ BoxCollider2D:
   m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.2572708, y: 3.843}
+  m_Offset: {x: -2.2572708, y: 3.842}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -121994,7 +121994,7 @@ Transform:
   m_GameObject: {fileID: 2090018319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8693013, y: 0.38986683, z: -13}
+  m_LocalPosition: {x: -1.9493456, y: 0.38986683, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
