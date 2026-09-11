@@ -97,6 +97,7 @@ public class UIManager : MonoBehaviour
 
     public void RestartLevelButton()
     {
+        MusicManager.Instance.StopMusic();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -112,6 +113,7 @@ public class UIManager : MonoBehaviour
 
     private void OnPlayerDeath()
     {
+        MusicManager.Instance.StopMusic();
         ShowDeathMenu();
     }
 }
